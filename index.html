@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Nikita Miroshnichenko — AI research, computational biology, autonomous scientific agents, biological foundation models and NeuroAI." />
+  <title>Nikita Miroshnichenko — AI × Science</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+  <div class="ambient ambient-c" aria-hidden="true"></div>
+  <canvas id="field" aria-hidden="true"></canvas>
+
+  <header class="nav-shell">
+    <nav class="nav">
+      <a class="mark" href="#top" aria-label="Home">NM<span>·</span></a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#agenda">Research</a>
+        <a href="#experience">Experience</a>
+      </div>
+      <a class="tiny-cta" href="#contact">Contact ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="eyebrow reveal">
+        <span class="pulse"></span>
+        AI research · computational biology · Lausanne, Switzerland
+      </div>
+
+      <h1 class="hero-title reveal">
+        Building intelligent<br />
+        systems <span class="ghost">for science.</span>
+      </h1>
+
+      <div class="hero-bottom reveal">
+        <p class="hero-copy">
+          I work across <strong>foundation models</strong>, <strong>autonomous agents</strong>,
+          <strong>computational biology</strong> and <strong>NeuroAI</strong> — with a long-term
+          interest in systems that can reason, discover and learn from biology itself.
+        </p>
+
+        <div class="hero-meta">
+          <div>
+            <span class="label">CURRENTLY EXPLORING</span>
+            <div class="ticker" id="ticker">Biological foundation models</div>
+          </div>
+          <div class="hero-actions">
+            <a href="#work">Selected work ↓</a>
+            <a href="#agenda">Research agenda →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-orbit" aria-hidden="true">
+        <span>AI</span><span>BIO</span><span>AGENTS</span><span>NEURO</span>
+      </div>
+    </section>
+
+    <section class="manifesto section">
+      <p class="section-kicker">01 / DIRECTION</p>
+      <div class="manifesto-grid">
+        <h2 class="reveal">From biological data<br />to general intelligence.</h2>
+        <div class="manifesto-copy reveal">
+          <p>
+            My research direction sits at the intersection of modern AI and the life sciences:
+            learning representations of cells, brains and biological systems; building agents
+            that can operate through scientific workflows; and using biological principles to
+            rethink how intelligent systems are designed.
+          </p>
+          <p class="muted">
+            The north star: AI systems capable of forming hypotheses, using tools, learning from
+            experiments and progressively extending scientific understanding.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section work">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">02 / SELECTED WORK</p>
+          <h2>Research & systems</h2>
+        </div>
+        <p class="section-note">The site grows with the work.</p>
+      </div>
+
+      <article class="project project-featured reveal" data-project="celllm">
+        <div class="project-index">01</div>
+
+        <div class="project-copy">
+          <div class="project-status in-progress">IN PROGRESS</div>
+          <h3>CellLM</h3>
+          <p class="project-subtitle">Foundation models for cellular states.</p>
+          <p class="project-description">
+            Exploring transformer-based representations of single-cell gene-expression profiles
+            for cell-state understanding, annotation and biological reasoning.
+          </p>
+          <div class="tags">
+            <span>Transformers</span><span>Single-cell</span><span>Representation learning</span>
+          </div>
+        </div>
+
+        <div class="project-stage cell-stage" aria-label="Interactive latent cell-state visualization">
+          <div class="stage-topline">
+            <span>LATENT CELL-STATE SPACE</span>
+            <span class="live-dot">LIVE</span>
+          </div>
+          <canvas id="cellCanvas" class="cell-canvas"></canvas>
+          <div class="cell-legend">
+            <span><i class="legend-dot ld1"></i>T / NK</span>
+            <span><i class="legend-dot ld2"></i>B cell</span>
+            <span><i class="legend-dot ld3"></i>Myeloid</span>
+          </div>
+          <div class="stage-hint">Move cursor through the embedding ↗</div>
+        </div>
+      </article>
+
+      <div class="project-grid">
+
+        <article class="project compact-project reveal" data-project="ankelodon">
+          <div class="project-index">02</div>
+
+          <div class="project-copy">
+            <div class="project-status">BUILDING</div>
+            <h3>Ankelodon</h3>
+            <p class="project-subtitle">Autonomous research agent.</p>
+            <p class="project-description">
+              A multi-agent system for planning, tool use, evidence synthesis, hypothesis
+              generation and iterative scientific problem solving.
+            </p>
+            <div class="tags"><span>Agents</span><span>LLMs</span><span>Tool use</span></div>
+          </div>
+
+          <div class="project-stage agent-stage">
+            <div class="stage-topline">
+              <span>RESEARCH LOOP</span>
+              <span id="agentState">PLANNING</span>
+            </div>
+
+            <div class="agent-graph" id="agentGraph">
+              <svg class="agent-links" viewBox="0 0 600 280" preserveAspectRatio="none" aria-hidden="true">
+                <path class="agent-link p1" d="M300 139 L125 72" />
+                <path class="agent-link p2" d="M300 139 L478 73" />
+                <path class="agent-link p3" d="M300 139 L500 214" />
+                <path class="agent-link p4" d="M300 139 L111 216" />
+                <path class="agent-link p5" d="M125 72 C225 25 390 28 478 73" />
+                <path class="agent-link p6" d="M478 73 C565 115 559 170 500 214" />
+                <path class="agent-link p7" d="M500 214 C390 260 218 262 111 216" />
+              </svg>
+
+              <div class="agent-node task-node" data-agent="task">
+                <span>RESEARCH</span><strong>TASK</strong>
+              </div>
+              <div class="agent-node agent-plan" data-agent="plan"><span>01</span><strong>PLAN</strong></div>
+              <div class="agent-node agent-search" data-agent="search"><span>02</span><strong>SEARCH</strong></div>
+              <div class="agent-node agent-code" data-agent="code"><span>03</span><strong>CODE</strong></div>
+              <div class="agent-node agent-critic" data-agent="critic"><span>04</span><strong>CRITIC</strong></div>
+
+              <span class="agent-packet packet-a"></span>
+              <span class="agent-packet packet-b"></span>
+              <span class="agent-packet packet-c"></span>
+            </div>
+
+            <div class="agent-footer">
+              <span>MEMORY ↔ TOOLS ↔ EVIDENCE</span>
+              <span class="agent-cycle">ITERATION <b id="agentIteration">01</b></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project compact-project reveal" data-project="biolm">
+          <div class="project-index">03</div>
+
+          <div class="project-copy">
+            <div class="project-status">NEXT</div>
+            <h3>BioLM Mini</h3>
+            <p class="project-subtitle">A biological language model from scratch.</p>
+            <p class="project-description">
+              Tokenization, transformer architecture, pretraining and controlled experiments on
+              biological sequences — built to understand the full foundation-model stack.
+            </p>
+            <div class="tags"><span>Tokenization</span><span>Pretraining</span><span>Transformers</span></div>
+          </div>
+
+          <div class="project-stage biolm-stage">
+            <div class="stage-topline">
+              <span>BPE → REPRESENTATION</span>
+              <span id="bpeStep">MERGE 01</span>
+            </div>
+
+            <div class="bpe-demo">
+              <div class="bpe-label">SEQUENCE</div>
+              <div class="bpe-tokens" id="bpeTokens"></div>
+
+              <div class="bpe-operation">
+                <span class="op-line"></span>
+                <strong id="bpeOperation">most frequent pair → AC</strong>
+                <span class="op-line"></span>
+              </div>
+
+              <div class="mini-transformer">
+                <div class="model-block" data-model-stage="embed">
+                  <span>01</span><strong>EMBED</strong>
+                </div>
+                <i>→</i>
+                <div class="model-block" data-model-stage="attn">
+                  <span>02</span><strong>ATTEND</strong>
+                </div>
+                <i>→</i>
+                <div class="model-block" data-model-stage="predict">
+                  <span>03</span><strong>PREDICT</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="biolm-footer">
+              <span>VOCAB <b id="bpeVocab">256</b></span>
+              <span>STEP <b id="bpeCounter">1 / 4</b></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project wide-project reveal" data-project="tresflow">
+          <div class="project-index">04</div>
+
+          <div class="project-copy">
+            <div class="project-status shipped">RESEARCH ENGINEERING</div>
+            <h3>TrESFlow</h3>
+            <p class="project-subtitle">Reproducible computational biology workflows.</p>
+            <p class="project-description">
+              Production-minded workflow engineering for scalable and reproducible biological
+              data analysis.
+            </p>
+            <div class="tags"><span>Nextflow</span><span>Bioinformatics</span><span>Reproducibility</span></div>
+          </div>
+
+          <div class="project-stage flow-stage">
+            <div class="stage-topline">
+              <span>NEXTFLOW EXECUTION</span>
+              <span id="flowStatus">RUNNING</span>
+            </div>
+
+            <div class="flow-track" id="flowTrack">
+              <div class="flow-line"><span class="flow-progress" id="flowProgress"></span></div>
+
+              <div class="flow-step active" data-flow-step="0">
+                <span class="flow-icon">01</span>
+                <strong>INPUT</strong>
+                <small>FASTQ / MATRIX</small>
+              </div>
+              <div class="flow-step" data-flow-step="1">
+                <span class="flow-icon">02</span>
+                <strong>QC</strong>
+                <small>FILTER + METRICS</small>
+              </div>
+              <div class="flow-step" data-flow-step="2">
+                <span class="flow-icon">03</span>
+                <strong>PROCESS</strong>
+                <small>TRANSFORM</small>
+              </div>
+              <div class="flow-step" data-flow-step="3">
+                <span class="flow-icon">04</span>
+                <strong>ANALYZE</strong>
+                <small>MODEL / STATS</small>
+              </div>
+              <div class="flow-step" data-flow-step="4">
+                <span class="flow-icon">05</span>
+                <strong>REPORT</strong>
+                <small>ARTIFACTS</small>
+              </div>
+            </div>
+
+            <div class="flow-console">
+              <span class="console-prompt">›</span>
+              <span id="flowLog">Launching reproducible analysis…</span>
+              <i class="console-cursor"></i>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="agenda" class="section agenda">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">03 / RESEARCH AGENDA</p>
+          <h2>What I want to understand<br />and build.</h2>
+        </div>
+      </div>
+
+      <div class="agenda-grid">
+        <article class="agenda-card reveal">
+          <span class="num">A</span>
+          <h3>Foundation Models</h3>
+          <p>General-purpose learned representations, new architectures, efficient adaptation and reasoning.</p>
+          <small>LANGUAGE · BIOLOGY · MULTIMODALITY</small>
+        </article>
+        <article class="agenda-card reveal">
+          <span class="num">B</span>
+          <h3>Autonomous Science</h3>
+          <p>Agents that search, reason, use tools, run analyses, critique themselves and generate testable hypotheses.</p>
+          <small>AGENTS · TOOL USE · SCIENTIFIC REASONING</small>
+        </article>
+        <article class="agenda-card reveal">
+          <span class="num">C</span>
+          <h3>AI for Biology & Medicine</h3>
+          <p>Learning from cells, omics, clinical data and biological sequences to model complex living systems.</p>
+          <small>SINGLE-CELL · BIOMEDICINE · MULTI-OMICS</small>
+        </article>
+        <article class="agenda-card reveal">
+          <span class="num">D</span>
+          <h3>NeuroAI</h3>
+          <p>Using neuroscience to understand intelligence — and AI to interrogate neural computation.</p>
+          <small>EEG · NEURAL REPRESENTATIONS · BRAIN-INSPIRED AI</small>
+        </article>
+        <article class="agenda-card reveal">
+          <span class="num">E</span>
+          <h3>Artificial Life</h3>
+          <p>Emergent adaptive systems, synthetic biology and computational approaches to life-like organization.</p>
+          <small>ALIFE · SYNTHETIC BIOLOGY · EMERGENCE</small>
+        </article>
+        <article class="agenda-card reveal">
+          <span class="num">F</span>
+          <h3>Intelligence Itself</h3>
+          <p>Mechanisms of learning, reasoning, agency and the bridge between artificial and biological intelligence.</p>
+          <small>AGI · COGNITION · BIOLOGICAL INTELLIGENCE</small>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section experience">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">04 / EXPERIENCE</p>
+          <h2>Research trajectory</h2>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-row reveal">
+          <div class="timeline-date">2023 — 2026</div>
+          <div>
+            <h3>University of Lausanne</h3>
+            <p class="role">Research Assistant · Computational Oncology</p>
+          </div>
+          <p>
+            Single-cell and multimodal biological data, reproducible computational workflows,
+            statistical analysis and biological interpretation.
+          </p>
+        </article>
+
+        <article class="timeline-row reveal">
+          <div class="timeline-date">2022 — 2023</div>
+          <div>
+            <h3>EPFL · Brain Mind Institute</h3>
+            <p class="role">Student Assistant</p>
+          </div>
+          <p>
+            Early research experience at the interface of biology, neuroscience and computation.
+          </p>
+        </article>
+
+        <article class="timeline-row reveal">
+          <div class="timeline-date">NOW</div>
+          <div>
+            <h3>MSc · Bioinformatics</h3>
+            <p class="role">University of Lausanne</p>
+          </div>
+          <p>
+            Deepening the transition from computational biology toward research on foundation
+            models, autonomous AI systems and NeuroAI.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <p class="section-kicker">05 / CONTACT</p>
+      <h2 class="reveal">
+        Interested in building<br />
+        the next layer of <span class="ghost">scientific AI?</span>
+      </h2>
+      <p class="contact-copy reveal">
+        Open to research collaborations, AI/ML research roles and ambitious work at the
+        intersection of machine intelligence and the life sciences.
+      </p>
+      <div class="contact-links reveal">
+        <a href="#">EMAIL ↗</a>
+        <a href="#">GITHUB ↗</a>
+        <a href="#">LINKEDIN ↗</a>
+        <a href="#">CV ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Nikita Miroshnichenko</span>
+    <span>AI × SCIENCE · LAUSANNE</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
